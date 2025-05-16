@@ -13,13 +13,13 @@ The failure rate describes the probability of failure within a given time interv
 To build a PDF from real-world data, you'd start by plotting a histogram of observed failure times. On the x-axis, you have the time bins (e.g., 0–10 hours, 10–20 hours, etc.), and on the y-axis, the count of failures in each time bin. Sturges’ Rule is a handy method for deciding how many bins to use [read more here](https://en.wikipedia.org/wiki/Sturges%27s_rule).
 
 <!-- HISTOGRAM PLOT -->
-![Reliability Plot](FailureRate\histogram.png)
+![Reliability Plot](FailureRate/histogram.png)
 *Histogram of Failures*
 
 Normalizing the count of the number of failures ensures the area under the curve equals 1, allowing us to treat it as a true probability function.
 
 <!-- NORMALIZED PLOT -->
-![Reliability Plot](FailureRate\histogram_kde.png)
+![Reliability Plot](FailureRate/histogram_kde.png)
 *Normalized Histogram of Failures with KDE*
 
  This means we can now answer key questions like:
@@ -37,7 +37,7 @@ $$
 
 <!-- KDE With Limits -->
 
-![Reliability Plot](FailureRate\FailureBetween.png)
+![Reliability Plot](FailureRate/FailureBetween.png)
 *Failure Between Time A and B*
 
 Example:
@@ -73,7 +73,7 @@ $$
 In simple terms, it’s one minus the cumulative probability of failure up to time t.
 
 
-![Reliability Plot](FailureRate\reliability.png)
+![Reliability Plot](FailureRate/reliability.png)
 *Relationship Between Failure Rate and Reliabilty*
 
 
