@@ -1,25 +1,40 @@
-## Understanding Failure Rate and Reliability Function
-
+---
+title: Understanding Failure Rate and Reliability Function
+date: 2025-05-16 22:45:00 +/-0
+categories: [Reliability]
+tags: [reliability, failure, reliability] 
+math: true
+---
 *Welcome to the first post in a series exploring the core principles of Reliability Engineering.*
 
 *In this article, we’ll start with two essential concepts: failure rate and the reliability function. These form the foundation of how we assess and predict the performance of components over time.*
 
 ---
 ### What Is Failure Rate?
-Ever wondered what the likelihood is that a part fails between two points in time? That’s exactly the kind of question the failure rate helps answer.
+Ever wondered **what the likelihood is that a part fails between two points in time?**
+
+ That’s exactly the kind of question the failure rate helps answer.
 
 The failure rate describes the probability of failure within a given time interval. It’s typically represented using a probability density function (PDF). By plotting this function, we can understand how failures are distributed over time—and even fit a model to that distribution.
 
 To build a PDF from real-world data, you'd start by plotting a histogram of observed failure times. On the x-axis, you have the time bins (e.g., 0–10 hours, 10–20 hours, etc.), and on the y-axis, the count of failures in each time bin. Sturges’ Rule is a handy method for deciding how many bins to use [read more here](https://en.wikipedia.org/wiki/Sturges%27s_rule).
 
-<!-- HISTOGRAM PLOT -->
-![Reliability Plot](FailureRate\histogram.png)
+<!-- HISTOGRAM PLOT
+![Reliability Plot](FailureRate/histogram.png)
+*Histogram of Failures* -->
+
+
+![Reliability Plot](/assets/2025-05-16-Reliabiliity/histogram.png){: width="400" }
 *Histogram of Failures*
+
+
+<!-- ![Chirpy Starter Template](/assets/articles/2024-01-13-chirpystarter.png)
+_Creating a new GitHub repo using the Chirpy Starter template_ -->
 
 Normalizing the count of the number of failures ensures the area under the curve equals 1, allowing us to treat it as a true probability function.
 
 <!-- NORMALIZED PLOT -->
-![Reliability Plot](FailureRate\histogram_kde.png)
+![Reliability Plot](/assets/2025-05-16-Reliabiliity/histogram_kde.png){: width="400" }
 *Normalized Histogram of Failures with KDE*
 
  This means we can now answer key questions like:
@@ -37,7 +52,7 @@ $$
 
 <!-- KDE With Limits -->
 
-![Reliability Plot](FailureRate\FailureBetween.png)
+![Reliability Plot](/assets/2025-05-16-Reliabiliity/FailureBetween.png){: width="400" }
 *Failure Between Time A and B*
 
 Example:
@@ -62,7 +77,7 @@ So, there’s an 89% chance the part will fail during that period.
 
 The reliability function, also called the *survivor function*, answers a different but equally important question:
 
-What’s the probability that a part is still functioning at a certain point in time?
+**What’s the probability that a part is still functioning at a certain point in time?**
 
 Mathematically, the reliability function is defined as:
 
@@ -73,7 +88,7 @@ $$
 In simple terms, it’s one minus the cumulative probability of failure up to time t.
 
 
-![Reliability Plot](FailureRate\reliability.png)
+![Reliability Plot](/assets/2025-05-16-Reliabiliity/reliability.png){: width="400" }
 *Relationship Between Failure Rate and Reliabilty*
 
 
