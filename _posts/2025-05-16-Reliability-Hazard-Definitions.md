@@ -1,5 +1,5 @@
 ---
-title: Understanding Failure Rate and Reliability Function
+title: Understanding Failure Distribution and Reliability Function
 date: 2025-05-16 22:45:00 +/-0
 categories: [Reliability]
 tags: [reliability, failure, reliability] 
@@ -7,15 +7,15 @@ math: true
 ---
 *Welcome to the first post in a series exploring the core principles of Reliability Engineering.*
 
-*In this article, we’ll start with two essential concepts: failure rate and the reliability function. These form the foundation of how we assess and predict the performance of components over time.*
+*In this article, we’ll start with two essential concepts: failure distribution and the reliability function. These form the foundation of how we assess and predict the performance of components over time.*
 
 ---
-### What Is Failure Rate?
+### What Is Failure Distribution?
 Ever wondered **what the likelihood is that a part fails between two points in time?**
 
- That’s exactly the kind of question the failure rate helps answer.
+ That’s exactly the kind of question the failure distribution helps answer.
 
-The failure rate describes the probability of failure within a given time interval. It’s typically represented using a probability density function (PDF). By plotting this function, we can understand how failures are distributed over time—and even fit a model to that distribution.
+The failure distribution describes the probability of failure within a given time interval. It’s represented using a probability density function (PDF). By plotting this function, we can understand how failures are distributed over time—and even fit a model to that distribution.
 
 To build a PDF from real-world data, you'd start by plotting a histogram of observed failure times. On the x-axis, you have the time bins (e.g., 0–10 hours, 10–20 hours, etc.), and on the y-axis, the count of failures in each time bin. Sturges’ Rule is a handy method for deciding how many bins to use [read more here](https://en.wikipedia.org/wiki/Sturges%27s_rule).
 
@@ -89,12 +89,12 @@ In simple terms, it’s one minus the cumulative probability of failure up to ti
 
 
 ![Reliability Plot](/assets/2025-05-16-Reliabiliity/reliability.png){: width="400" }
-*Relationship Between Failure Rate and Reliabilty*
+*Relationship Between Failure and Reliabilty*
 
 
 For example, if a component has a reliability of 0.8 at 100 hours, that means there's an 80% chance it will still be operational at that time.
 
-Going back to our earlier function, to calculate the reliability at 97 hours, we’d integrate the failure rate from 0 to 97 and subtract that value from 1.
+Going back to our earlier function, to calculate the reliability at 97 hours, we’d integrate the probability of failure from 0 to 97 and subtract that value from 1.
 
 ---
 
